@@ -133,11 +133,11 @@ func main() {
 
 	r := mux.NewRouter()
 
-	r.HandleFunc("/movies", getAllMovies).Methods("GET")  //Done
-	r.HandleFunc("/movies/{id}", getMovie).Methods("GET") //Done
+	r.HandleFunc("/movies", getAllMovies).Methods("GET")
+	r.HandleFunc("/movies/{id}", getMovie).Methods("GET")
 	r.HandleFunc("/movies", createMovie).Methods("POST")
 	r.HandleFunc("/movies/{id}", updateMovie).Methods("PUT")
-	r.HandleFunc("/movies/{id}", deleteMovie).Methods("DELETE") //Done
+	r.HandleFunc("/movies/{id}", deleteMovie).Methods("DELETE")
 
 	fmt.Printf("Server listening on port %v\n", PORT)
 	log.Fatal(http.ListenAndServe(":"+strconv.Itoa(PORT), r))
